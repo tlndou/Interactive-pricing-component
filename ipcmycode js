@@ -1,0 +1,34 @@
+const form = document.getElementById('form');
+const firstName = document.getElementById('first-name');
+const lastName = document.getElementById('last-name');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const errorFirstName = document.getElementById('error-firstName');
+const errorLastName = document.getElementById('error-lastName');
+const errorEmail = document.getElementById('error-email');
+const errorPassword = document.getElementById('error-password');
+
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    errorFirstName.textContent = '';
+    if (firstName.value === '' || firstName.value == null) {
+        errorFirstName.textContent = 'First Name cannot be empty';
+    } 
+
+    errorLastName.textContent = '';
+    if (lastName.value === '' || lastName.value == null) {
+        errorLastName.textContent = 'Last Name cannot be empty';
+    }
+
+    errorEmail.textContent = '';
+    if (email.value === '' || email.value == null) {
+        errorEmail.textContent = 'Looks like this is not an email';
+    }
+
+    errorPassword.textContent = '';
+    if (password.value === '' || password.value == null) {
+        errorPassword.textContent = 'Password cannot be empty';
+    }
+});
+
